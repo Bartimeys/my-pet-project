@@ -1,6 +1,6 @@
 # angular-openweather-app — a weather forecast app written in AngularJS
 
-<img src="app/Screenshot_1.png" alt="Open Weather App"/>
+<img src="app/1.png" alt="Open Weather App"/>
 
 ## Installation
 
