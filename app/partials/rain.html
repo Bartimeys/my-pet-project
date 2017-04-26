@@ -1,0 +1,64 @@
+<div layout="column" class="container md-inline-form inputdemoBasicUsage">
+    <div class="weather-search">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger">
+                    STORM? Dont forgot umbrella
+                </div>
+                <div>
+                    <form class="form-inline" role="form">
+                        <span class="btn-group">
+                            <button ng-repeat="item in stormLocations" ng-click="setLocation(item)" type="submit"
+                                    class="md-raised md-button md-ink-ripple">{{item}}</button>
+                        </span>
+                        <span class="form-group {{hasState}}">
+                            <label class="sr-only" for="location">City</label>
+                            <md-content layout-padding="">
+                                <div layout-gt-xs="row">
+                                    <md-input-container class="md-block">
+                                        <label>City</label>
+                                        <input ng-model="location" type="text" id="location">
+                                    </md-input-container>
+                                </div>
+                        </span>
+                        <md-button ng-click="getForecastByLocation(location)" type="submit"
+                                   class="md-raised md-primary">Search!
+                        </md-button>
+                        <!--<button ng-click="getForecastByLocation(location)" type="submit" class="btn btn-primary">Search!</button>-->
+                        <span ng-show="message" class="alert"><span class="glyphicon glyphicon-arrow-left">&nbsp;</span>{{message}}</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather-data" ng-show="true">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="">
+                    <h3>
+                        {{forecast.city.name | placeholder:'?'}}, {{forecast.city.country | isoCountry}}
+                        <small>Lon: {{forecast.city.coord.lon | number:2}} Lat: {{forecast.city.coord.lat | number:2}}
+                            Population: {{forecast.city.population | number:0}}
+                        </small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div weather-panel-wind="forecast" show-entry="forecast.list[0]"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div weather-panel-wind="forecast" show-entry="forecast.list[1]"></div>
+            </div>
+            <div class="col-xs-4">
+                <div weather-panel-wind="forecast" show-entry="forecast.list[2]"></div>
+            </div>
+            <div class="col-xs-4">
+                <div weather-panel-wind="forecast" show-entry="forecast.list[3]"></div>
+            </div>
+        </div>
+    </div>
+</div>

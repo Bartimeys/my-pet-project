@@ -1,0 +1,23 @@
+{
+  "name": "angular-openweather-app",
+  "description": "A weather forecast and Currency Converter app written in AngularJS.",
+  "version": "0.1.6",
+  "author": {
+    "name": "Olha Popovych",
+    "email": "oliush007@gmail.com"
+  },
+  "scripts": {
+    "start": "node scripts/web-server.js"
+  },
+  "devDependencies": {
+    "angular-material": "^1.1.4",
+    "phantomjs": "*"
+  },
+  "dependencies": {
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

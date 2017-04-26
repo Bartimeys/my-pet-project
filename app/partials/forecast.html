@@ -1,0 +1,99 @@
+<div class="container md-inline-form inputdemoBasicUsage">
+    <div class="weather-search">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div>
+                    <form class="form-inline" role="form">
+                        <span class="btn-group">
+                            <button ng-repeat="item in exampleLocations" ng-click="setLocation(item)" type="submit"
+                                    class="md-raised md-button md-ink-ripple">{{item}}</button>
+                        </span>
+                        <span class="form-group {{hasState}}">
+                            <!--<label class="sr-only" for="location">City</label>-->
+                            <md-input-container flex="50">
+                                <label>City</label>
+                                <input ng-model="location" type="text" class="form-control" id="location">
+                            </md-input-container>
+                        </span>
+                        <button ng-click="getForecastByLocation(location)"
+                                class="md-raised md-primary md-button md-ink-ripple" type="submit"><span
+                                class="ng-scope">Search!</span></button>
+                        <!--<button ng-click="getForecastByLocation(location)" type="submit" class="btn btn-primary">Search!</button>-->
+                        <span ng-show="message" class="alert"><span class="glyphicon glyphicon-arrow-left">&nbsp;</span>{{message}}</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <md-content class="md-padding" layout-xs="column" layout="row">
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <div class="weather-data" ng-show="true">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="">
+                                            <h3>
+                                                {{forecast.city.name | placeholder:'?'}}, {{forecast.city.country | isoCountry}}
+                                                <small>Lon: {{forecast.city.coord.lon | number:2}} Lat: {{forecast.city.coord.lat | number:2}}
+                                                    Population: {{forecast.city.population | number:0}}
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div weather-panel="forecast" show-entry="forecast.list[0]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </md-card-title-text>
+
+                    </md-card-title>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div weather-panel="forecast" show-entry="forecast.list[1]"></div>
+                                </div>
+                            </div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div weather-panel="forecast" show-entry="forecast.list[2]"></div>
+                                </div>
+                            </div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div weather-panel="forecast" show-entry="forecast.list[3]"></div>
+                            </div>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </div>
+        </md-content>
+    </div>

@@ -1,0 +1,27 @@
+{
+  "name": "angular-openweather-app",
+  "version": "0.1.6",
+  "authors": [
+    "Olha Popovych <oliush007@gmail.com>"
+  ],
+  "description": "A weather forecast and Currency Converter app written in AngularJS.",
+  "main": "app/index.html",
+  "keywords": [
+    "angular",
+    "openweathermap",
+    "weather"
+  ],
+  "license": "MIT",
+  "homepage": "git@github.com:Bartimeys/my-pet-project.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iso-3166-country-codes-angular": "~1.0.2"
+  }
+}
