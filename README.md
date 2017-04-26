@@ -1,4 +1,4 @@
-# angular-openweather-app — a weather forecast app written in AngularJS
+# angular-openweather-app — a weather forecast (and Currency Converter will be added soon) app written in AngularJS
 
 <img src="app/screen.png" alt="Open Weather App"/>
 
